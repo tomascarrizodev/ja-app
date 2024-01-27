@@ -1,0 +1,35 @@
+Front:
+- Vite
+- ReactJS:
+    + React Router
+    + Redux*
+    + react-pdf*
+    + react-type-animation*
+    + react-hook-form
+    + zod
+- Tailwind
+- Axios
+- Framer Motion*
+- GraphQL*
+- uuid
+- React icons:
+    + heroicons
+    + ant design
+
+Backend*:
+- NodeJS
+- Express
+- TypeScript*
+- nodemon
+- cors
+- morgan*
+
+Deploy*:
+- Google Firebase:
+    + Storage
+    + Real time database
+    + Hosting
+- Render
+
+
+* Yet to define

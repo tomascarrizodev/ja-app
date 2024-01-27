@@ -1,0 +1,48 @@
+- Logo (2/3 colors - monocolor)
+- "Me"/"Yo"/"Ich"/"Eu" (6+- colors)
+- Lenguage btn - "En"/"Es"/"De"/"Pt" (2/3colors)
+- Sun (monocolor)
+- Moon (monocolor)
+- Arrow (2/3 colors)
+- "GO" (2/3 colors)
+- Eye Icon (4 colors)*
+- Genders (color off, color hover, color selected):
+    _ Female Gender
+    _ Male Gender
+    _ No Binary Gender
+- "Select" Arrow (2/3 colors)
+- Plus/Add (2 colors)
+- Ex/Close (2 colors)
+- Info (2 colors)
+- Calender (2 colors)
+- URL/Chain (2 colors)
+- Done (2)
+- Share (2)
+- Edit (2)
+- Question mark (2)
+- Left Menu (color off, color hover, color selected, color add):
+    _ Profile/Personal
+    _ Education
+    _ Experience
+    _ Projects
+    _ Contact
+    _ Wishes
+    _ Hobbies
+    _ Something
+- User picture (2 colors)
+- Right Menu (off, hover):
+    _ Edit profile
+    _ Privacy
+    _ Theme** (Sun/Moon)
+    _ Lenguage btn**
+    _ Info**
+- Social Network**:
+    _ LinkedIn
+    _ Instagram
+    _ X
+    _ Facebook
+    _ Youtube
+    _ Twitch
+
+*Component that i can just download
+**Already made
