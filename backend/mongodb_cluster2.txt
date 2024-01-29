@@ -1,0 +1,3 @@
+password: I9XfMSSMJ88Sjood
+
+url: mongodb+srv://tomascarrizodev:<password>@ja-app.0xxqkgq.mongodb.net/?retryWrites=true&w=majority
