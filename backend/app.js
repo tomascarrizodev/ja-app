@@ -22,7 +22,7 @@ mongoose.connect(config.MONGODB_URI)
 
 app.use(cors())
 // for when frontend is ready
-// app.use(express.static('dist'))
+app.use(express.static('dist'))
 app.use(express.json())
 app.use(middleware.requestLogger)
 app.use(middleware.tokenExtractor)
@@ -33,4 +33,4 @@ app.use('/login', loginRouter)
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
 
-module.exports  = app
+module.exports = app
