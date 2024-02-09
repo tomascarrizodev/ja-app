@@ -1,19 +1,16 @@
 const mongoose = require('mongoose')
-const { randomUUID } = require('crypto')
-
 const ID = mongoose.Schema.Types.ObjectId
 
 const phoneSchema = new mongoose.Schema({
   "phone_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "user_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'User'
   },
   "contact_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'Contact'
   },
   "country": {
@@ -27,10 +24,10 @@ const phoneSchema = new mongoose.Schema({
 
 phoneSchema.set('toJSON', {
   transform: (document, returnedObject) => {
+    returnedObject.phone_id = returnedObject._id
     delete returnedObject._id
     delete returnedObject.__v
   }
 })
-
 
 module.exports = mongoose.model('Phone', phoneSchema)

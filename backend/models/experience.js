@@ -1,15 +1,12 @@
 const mongoose = require('mongoose')
-const { randomUUID } = require('crypto') 
-
 const ID = mongoose.Schema.Types.ObjectId
 
 const experienceSchema = new mongoose.Schema({
   "experience_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "user_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'User'
   },
   "responsabilities": [String],
@@ -19,17 +16,17 @@ const experienceSchema = new mongoose.Schema({
   "entrance": Date,
   "desire_position": String,
   "previous_exp_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'PreviousExp'
   }
 })
 
 experienceSchema.set('toJSON', {
   transform: (document, returnedObject) => {
+    returnedObject.experience_id = returnedObject._id
     delete returnedObject._id
     delete returnedObject.__v
   }
 })
-
 
 module.exports = mongoose.model('Experience', experienceSchema)

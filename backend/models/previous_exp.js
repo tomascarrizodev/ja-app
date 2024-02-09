@@ -1,29 +1,24 @@
 const mongoose = require('mongoose')
-const { randomUUID } = require('crypto')
-
 const ID = mongoose.Schema.Types.ObjectId
 
 const previousExpSchema = new mongoose.Schema({
   "previous_exp_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "user_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'User'
   },
   "previous_exps": [previousExpsSchema]
 })
-
 const PreviousExp = mongoose.model('PreviousExp', previousExpSchema)
 
 const previousExpsSchema = new mongoose.Schema({
   "previous_exp_main_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "previous_exp_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'PreviousExp'
   },
   "job_position": String,
@@ -32,8 +27,16 @@ const previousExpsSchema = new mongoose.Schema({
   "responsabilities": [String]
 })
 
+previousExpsSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.previous_exp_main_id = returnedObject._id
+    delete returnedObject._id
+    delete returnedObject.__v
+  }
+})
 previousExpSchema.set('toJSON', {
   transform: (document, returnedObject) => {
+    returnedObject.previous_exp_id = returnedObject._id
     delete returnedObject._id
     delete returnedObject.__v
   }

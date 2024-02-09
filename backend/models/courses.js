@@ -1,15 +1,12 @@
 const mongoose = require('mongoose')
-const { randomUUID } = require('crypto')
-
 const ID = mongoose.Schema.Types.ObjectId
 
 const coursesSchema = new mongoose.Schema({
   "courses_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "user_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'User'
   },
   "courses": [courseSchema]
@@ -19,11 +16,10 @@ const Courses = mongoose.model('Courses', coursesSchema)
 
 const courseSchema = new mongoose.Schema({
   "course_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "courses_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'Courses'
   },
   "course_title": String,
@@ -34,6 +30,14 @@ const courseSchema = new mongoose.Schema({
 
 coursesSchema.set('toJSON', {
   transform: (document, returnedObject) => {
+    returnedObject.courses_id = returnedObject._id
+    delete returnedObject._id
+    delete returnedObject.__v
+  }
+})
+courseSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.course_id = returnedObject._id
     delete returnedObject._id
     delete returnedObject.__v
   }

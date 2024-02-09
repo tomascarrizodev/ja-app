@@ -1,15 +1,12 @@
 const mongoose = require('mongoose')
-const { randomUUID } = require('crypto')
-
 const ID = mongoose.Schema.Types.ObjectId
 
 const addressSchema = new mongoose.Schema({
   "address_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "user_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'User'
   },
   "country": {
@@ -23,7 +20,7 @@ const addressSchema = new mongoose.Schema({
 
 addressSchema.set('toJSON', {
   transform: (document, returnedObject) => {
-    returnedObject.id = returnedObject._id.toString()
+    returnedObject.address_id = returnedObject._id.toString()
     delete returnedObject._id
     delete returnedObject.__v
   }

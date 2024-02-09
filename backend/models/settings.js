@@ -1,23 +1,27 @@
 const mongoose = require('mongoose')
-const { randomUUID } = require('crypto')
-
 const ID = mongoose.Schema.Types.ObjectId
 
 const settingsSchema = new mongoose.Schema({
   "settings_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "user_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'User'
   },
-  "dark_theme": Boolean,
-  "private": Boolean 
+  "dark_theme": {
+    type: Boolean,
+    default: false
+  },
+  "private": {
+    type: Boolean,
+    default: true
+  } 
 })
 
 settingsSchema.set('toJSON', {
   transform: (document, returnedObject) => {
+    returnedObject.settings_id = returnedObject._id
     delete returnedObject._id
     delete returnedObject.__v
   }

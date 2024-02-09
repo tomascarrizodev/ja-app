@@ -37,7 +37,7 @@ export default {
       colors: {
         'ja-dark': '#00141B',
         'ja-green': '#06D6A0',
-        'js-blue': '#118AB2',
+        'ja-blue': '#118AB2',
         'ja-light': '#FFF3DE',
         'ja-gold': '#FFD166',
         'ja-magenta': '#EF476F',

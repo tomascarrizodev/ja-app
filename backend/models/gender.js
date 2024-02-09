@@ -1,17 +1,16 @@
 const mongoose = require('mongoose')
-const { randomUUID } = require('crypto')
+const ID = mongoose.Schema.Types.ObjectId
 
 const genderSchema = new mongoose.Schema({
   "gender_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "user_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'User'
   },
   "profile_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'Profile'
   },
   "gender": String,
@@ -19,9 +18,10 @@ const genderSchema = new mongoose.Schema({
 })
 
 genderSchema.set('toJSON', {
-  transform: (document, returnObj) => {
-    delete returnObj._id
-    delete returnObj.__v
+  transform: (document, returnedObj) => {
+    returnedObj.gender_id = returnedObj._id
+    delete returnedObj._id
+    delete returnedObj.__v
   }
 })
 

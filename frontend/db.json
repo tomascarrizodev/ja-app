@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": "8437",
+      "firstname": "Tomi",
+      "lastname": "Carri",
+      "email": "tomi@gmail.com",
+      "username": "tomi",
+      "password": "password",
+      "repeatPassword": "password",
+      "birthday": "1999-09-05",
+      "country": "argentina"
+    },
+    {
+      "id": "faa9",
+      "firstname": "Nico",
+      "lastname": "Carrizo",
+      "email": "nico@gmail.com",
+      "username": "nicocarrizo",
+      "password": "Password1?",
+      "repeatPassword": "Password1?",
+      "birthday": "2002-11-01",
+      "country": "Afghanistan"
+    },
+    {
+      "id": "1a59",
+      "firstname": "Tomi",
+      "lastname": "Carrizo",
+      "email": "jorge@gmail.com",
+      "username": "jorge",
+      "password": "Password1?",
+      "repeatPassword": "Password1?",
+      "birthday": "1999-09-05",
+      "country": "argentina"
+    },
+    {
+      "id": "172f",
+      "firstname": "Mariano",
+      "lastname": "Molina",
+      "email": "mariano@gmail.com",
+      "username": "mariano",
+      "password": "Password1.",
+      "repeatPassword": "Password1.",
+      "birthday": "1999-12-08",
+      "country": "argentina"
+    },
+    {
+      "id": "670d",
+      "firstname": "Alex",
+      "lastname": "Giovine",
+      "email": "alex@gmail.com",
+      "username": "alex",
+      "password": "Password1?",
+      "repeatPassword": "Password1?",
+      "birthday": "1999-12-07",
+      "country": "argentina"
+    }
+  ]
+}

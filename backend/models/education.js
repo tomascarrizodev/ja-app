@@ -1,32 +1,30 @@
 const mongoose = require('mongoose')
-const { randomUUID } = require('crypto')
-
 const ID = mongoose.Schema.Types.ObjectId
 
 const educationSchema = new mongoose.Schema({
   "education_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "user_id": {
-    type: 'UUID',
+    type: ID,
     ref: "User"
   },
   "title": String,
   "university": String,
   "max_level": String,
   "courses_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'Courses'
   },
   "bootscamps_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'Bootcamps'
   }
 })
 
 educationSchema.set('toJSON', {
   transform: (document, returnedObject) => {
+    returnedObject.education_id = returnedObject._id
     delete returnedObject._id
     delete returnedObject.__v
   }

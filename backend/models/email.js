@@ -1,18 +1,15 @@
 const mongoose = require('mongoose')
-const { randomUUID } = require('crypto')
-
 const ID = mongoose.Schema.Types.ObjectId
 
 const emailSchema = new mongoose.Schema({
   "email_id": {
-    type: 'UUID',
-    default: () => randomUUID()
+    type: ID
   },
   "user_id": {
-    type: 'UUID',
+    type: ID,
     ref: 'User'
   },
-  "email_registered": {
+  "email": {
     type: String,
     ref: 'User'
   },
@@ -22,6 +19,7 @@ const emailSchema = new mongoose.Schema({
 
 emailSchema.set('toJSON', {
   transform: (document, returnedObject) => {
+    returnedObject.email_id = returnedObject._id
     delete returnedObject._id
     delete returnedObject.__v
   }
